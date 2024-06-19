@@ -6,4 +6,25 @@ from department import Department
 
 import ipdb
 
+Department.drop_table()
+Department.create_table()
+
+payroll = Department.create("Payroll2", "Building A, 5th Floor")
+print(payroll)
+
+
+
+hr = Department.create("Human Resource", "Building C, East Wing")
+print(hr)
+
+hr.name = 'HR'
+hr.location = "Building F, 10th Floor"
+hr.update()
+print(hr)  # <Department 2: HR, Building F, 10th Floor>
+
+print("Delete Payroll")
+payroll.delete()  # delete from db table, object still exists in memory
+print(payroll) 
+
+
 ipdb.set_trace()
